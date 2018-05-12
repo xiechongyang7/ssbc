@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>书评</title>
+
+    <style type="text/css">
+        body {
+            width: 100%;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        div, span, ul, li, img, input, table, tr, td {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .all {
+            width: 65%;
+            margin: 0 auto;
+        }
+    </style>
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/bootstrap.js"></script>
+</head>
+<body>
+<div class="all">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+
+                <a class="navbar-brand" href="#">Brand</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Link</a></li>
+                </ul>
+
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+
+            </div>
+        </div>
+
+        <!--导航-->
+        <div class="btn-group col-md-12" role="group">
+            <a href="home.html" type="button" class="btn btn-default col-md-2">首页</a>
+            <a href="activity.html" type="button" class="btn btn-default col-md-2">活动</a>
+            <a href="rank.html" type="button" class="btn btn-default col-md-2">榜单</a>
+            <a href="classify.html" type="button" class="btn btn-default col-md-2">分类</a>
+            <a href="booklist.html" type="button" class="btn btn-default col-md-2">书单</a>
+            <a href="review.html" type="button" class="btn btn-default col-md-2">书评</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="thumbnail">
+                    <img src="../images/明朝.png" height="128" width="98"/>
+                    <div class="caption">
+                        <h3>明朝那些事</h3>
+                        <p>作者</p>
+                        <p><a href="#" class="btn btn-primary" role="button">点赞</a> <a href="#" class="btn btn-default"
+                                                                                       role="button">收藏</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>名称</h2>
+            <a><h3>作者</h3></a>
+
+            <textarea class="col-md-12" style="height: 400px;" readonly>
+
+李开复、Jeff Dean联合力荐！
+Google TensorFlow深度学习中文教程。
+代码基于TF1.0版讲解，TF Contributor、Committer原创！
+
+本书介绍了TensorFlow的基础原理和应用，并侧重于结合实际例子讲解使用TensorFlow的方法。
+TensorFlow目前最主要的应用是在机器学习和深度学习领域，本书讲解了全连接神经网络、卷积神经网络、循环神经网络、深度强化学习等常见的深度学习模型。
+还介绍了TensorBoard、单机多GPU并行、分布式并行，TF Learn和其他TensorFlow辅助组件。
+本书适合有一定深度学习基础和代码编写能力的读者，书中对深度学习技术也有一定的介绍。
+
+            </textarea>
+
+        </div>
+
+
+        <!--评论-->
+
+
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon" id="sizing-addon1">用户</span>
+            <input type="text" class="form-control" value="回复内容 2018-1-1" aria-describedby="sizing-addon1" readonly>
+        </div>
+
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="输入你的评论">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button">发送</button>
+            </span>
+        </div>
+
+
+
+
+    </div>
+
+
+</div>
+</body>
+</html>

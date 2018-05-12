@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body {
+            width: 100%;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        div, span, ul, li, img, input, table, tr, td {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .all {
+            width: 65%;
+            margin: 0 auto;
+        }
+
+        .s li {
+
+            list-style: none;
+            height: 60px;
+
+            background: white;
+            /*border: solid 1px white;*/
+            line-height: 60px;
+            text-align: center;
+
+            border-right: 1px solid #cbcbcb;
+            border-left: none;
+            border-top: none;
+            border-bottom: none;
+
+            /*设置字体*/
+            font-family: 微软雅黑;
+            font-size: 1.4em;
+            color: black;
+        }
+
+        .s li:hover {
+            background: black;
+            color: white;
+        }
+
+        /*find*/
+        img {
+            width: 200px;
+            height: 200px;
+            /*圆形头像*/
+            border-radius: 100px;
+        }
+
+    </style>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/city-css.css">
+    <link rel="stylesheet" href="../css/ion.calendar.css">
+
+
+
+</head>
+<body>
+<div class="all">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+
+                <a class="navbar-brand" href="#">Brand</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a id="userTag" href="user.html"></a></li>
+                </ul>
+
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+
+            </div>
+        </div>
+
+        <!--导航-->
+        <div class="btn-group col-md-12" role="group">
+            <a href="home.html" type="button" class="btn btn-default col-md-2">首页</a>
+            <a href="activity.html" type="button" class="btn btn-default col-md-2">活动</a>
+            <a href="rank.html" type="button" class="btn btn-default col-md-2">榜单</a>
+            <a href="classify.html" type="button" class="btn btn-default col-md-2">分类</a>
+            <a href="booklist.html" type="button" class="btn btn-default col-md-2">书单</a>
+            <a href="review.html" type="button" class="btn btn-default col-md-2">书评</a>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="col-xs-12 col-md-8"><h1 class="banner1 col-md-3">个人中心</h1></div>
+        <div class="col-xs-6 col-md-4"><h3 class="banner">基本信息</h3></div>
+    </div>
+
+    <div class="col-md-2  nav-all">
+        <ul class="nav-stacked s">
+            <li role="presentation" onclick="seeUser()">查看个人信息</li>
+            <li role="presentation" onclick="setUser()">设置个人信息</li>
+            <li role="presentation">关注</li>
+            <li role="presentation">粉丝</li>
+            <li role="presentation">消息</li>
+            <li role="presentation">上传</li>
+            <li role="presentation">收藏</li>
+            <li role="presentation">修改密码</li>
+            <li role="presentation">我的地址</li>
+            <!--<li role="presentation">下载记录</li>-->
+            <!--<li role="presentation">我的书单</li>-->
+        </ul>
+    </div>
+
+    <!--<div class="col-md-10">-->
+    <!--<ul class="list-group col-md-4">-->
+    <!--<li class="list-group-item">书单名称</li>-->
+    <!--<li class="list-group-item">用户作者</li>-->
+    <!--<li class="list-group-item">书名：</li>-->
+    <!--<li class="list-group-item">书名：</li>-->
+    <!--<li class="list-group-item">书名：</li>-->
+    <!--<li class="list-group-item"><button>查看书单</button></li>-->
+    <!--</ul>-->
+
+    <!--<ul class="list-group col-md-4">-->
+    <!--<li class="list-group-item">书单名称</li>-->
+    <!--<li class="list-group-item">用户作者</li>-->
+    <!--<li class="list-group-item">书名：</li>-->
+    <!--<li class="list-group-item">书名：</li>-->
+    <!--<li class="list-group-item">书名：</li>-->
+    <!--<li class="list-group-item"><button>查看书单</button></li>-->
+    <!--</ul>-->
+
+
+    <!--<ul class="list-group col-md-4">-->
+    <!--<li class="list-group-item">书单名称</li>-->
+    <!--<li class="list-group-item">用户作者</li>-->
+    <!--<li class="list-group-item">书名：</li>-->
+    <!--<li class="list-group-item">书名：</li>-->
+    <!--<li class="list-group-item">书名：</li>-->
+    <!--<li class="list-group-item"><button>查看书单</button></li>-->
+    <!--</ul>-->
+
+
+    <!--<ul class="list-group col-md-4">-->
+    <!--<li class="list-group-item">书单名称</li>-->
+    <!--<li class="list-group-item">用户作者</li>-->
+    <!--<li class="list-group-item">书名：</li>-->
+    <!--<li class="list-group-item">书名：</li>-->
+    <!--<li class="list-group-item">书名：</li>-->
+    <!--<li class="list-group-item"><button>查看书单</button></li>-->
+    <!--</ul>-->
+    <!--</div>-->
+    <!--个人信息-->
+    <p id = "all">
+
+    <!--修改个人信息-->
+    <div class="col-md-10" id="setUser" style="display: none">
+        <div class="col-md-12">
+
+            <div class="panel    col-md-12">
+                <div class="panel-body col-md-2">
+                    昵称：
+                </div>
+                <input class="panel-footer col-md-10" id = "userNickname">
+            </div>
+
+            <div class="panel    col-md-12">
+                <div class="panel-body col-md-2">
+                    性别：
+                </div>
+                <input class="panel-footer col-md-10" id ="userSex">
+            </div>
+
+            <div class="panel    col-md-12">
+                <div class="panel-body col-md-2" >
+                    个新签名：
+                </div>
+                <input class="panel-footer col-md-10" id="userSignature">
+            </div>
+
+
+            <div class="panel    col-md-12">
+                <div class="panel-body col-md-2">
+                    邮箱：
+                </div>
+                <input class="panel-footer col-md-10" id="userEmail">
+            </div>
+
+            <div class="panel    col-md-12">
+                <div class="panel-body col-md-2">
+                    生日：
+                </div>
+
+                <input id ="userBirthday" type="text" class="panel-footer col-md-10 date" placeholder="请选择日期">
+
+            </div>
+
+
+            <div class="panel    col-md-12">
+                <div class="panel-body col-md-2">
+                    地址：
+                </div>
+                <input name="" id="sel1" type="text" class="city_input panel-footer col-md-10" readonly="readonly">
+            </div>
+
+            <div class="panel    col-md-12">
+                <div class="panel-body col-md-2">
+
+                </div>
+                <button type="button" class="btn btn-success col-md-5" onclick="set()">修改</button>
+            </div>
+
+            <div class="col-md-8" style="">
+                <img src="../images/w.jpeg"/>
+                <button>修改头像</button>
+            </div>
+        </div>
+
+    </div>
+    </p>
+
+</div>
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/bootstrap.js"></script>
+<script src="../js/city-js.js"></script>
+
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/moment.min.js"></script>
+<script src="../js/moment.zh-cn.js"></script>
+<script src="../js/ion.calendar.js"></script>
+<script src="../js/user.js"></script>
+<script src="../js/timeUtil.js"></script>
+<script src="../js/setUser.js"></script>
+
+</body>
+</html>
+
+
+<!--修改个人信息-->
+<!--<div class="col-md-10">-->
+<!--<div class="col-md-12">-->
+
+<!--<div class="panel    col-md-12">-->
+<!--<div class="panel-body col-md-2">-->
+<!--昵称：-->
+<!--</div>-->
+<!--<input class="panel-footer col-md-10" value="dd">-->
+<!--</div>-->
+
+<!--<div class="panel    col-md-12">-->
+<!--<div class="panel-body col-md-2">-->
+<!--性别：-->
+<!--</div>-->
+<!--<input class="panel-footer col-md-10" value="dd">-->
+<!--</div>-->
+
+<!--<div class="panel    col-md-12">-->
+<!--<div class="panel-body col-md-2">-->
+<!--个新签名：-->
+<!--</div>-->
+<!--<input class="panel-footer col-md-10" value="dd">-->
+<!--</div>-->
+
+
+<!--<div class="panel    col-md-12">-->
+<!--<div class="panel-body col-md-2">-->
+<!--邮箱：-->
+<!--</div>-->
+<!--<input class="panel-footer col-md-10" value="dd">-->
+<!--</div>-->
+
+<!--<div class="panel    col-md-12">-->
+<!--<div class="panel-body col-md-2">-->
+<!--生日：-->
+<!--</div>-->
+
+<!--<input type="text" class="panel-footer col-md-10 date" placeholder="请选择日期">-->
+
+<!--</div>-->
+
+
+<!--<div class="panel    col-md-12">-->
+<!--<div class="panel-body col-md-2">-->
+<!--地址：-->
+<!--</div>-->
+<!--&lt;!&ndash;<input class="panel-footer col-md-5" value="dd" readonly>&ndash;&gt;-->
+<!--&lt;!&ndash;<input class="panel-footer col-md-5" value="dd">&ndash;&gt;-->
+<!--<input name="" id="sel1"  type="text"  class="city_input panel-footer col-md-10" readonly="readonly">-->
+
+<!--&lt;!&ndash;<button  onclick="getValue();" class="col-md-1">获取</button>&ndash;&gt;-->
+<!--</div>-->
+
+<!--<div class="panel    col-md-12">-->
+<!--<div class="panel-body col-md-2">-->
+
+<!--</div>-->
+<!--<button type="button" class="btn btn-success col-md-5">修改</button>-->
+<!--</div>-->
+
+<!--<div class="col-md-8" style="">-->
+<!--<img src="../images/w.jpeg"/>-->
+<!--<button>修改头像</button>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--</div>-->
+
+
+<!--关注 粉丝 书评 下载记录-->
+<!--<div class="list-group col-md-10">-->
+<!--<ul class="list-group ">-->
+<!--<li class="list-group-item list-group-item-success">-->
+<!--&lt;!&ndash;<span class="badge">14</span>&ndash;&gt;-->
+<!--<button class="btn btn-warning badge">删除粉丝</button>-->
+<!--用户-->
+<!--</li>-->
+
+<!--<li class="list-group-item list-group-item-success">-->
+<!--&lt;!&ndash;<span class="badge">14</span>&ndash;&gt;-->
+<!--<button class="btn btn-warning badge">删除粉丝</button>-->
+<!--用户-->
+<!--</li>-->
+
+
+<!--<li class="list-group-item list-group-item-success">-->
+<!--&lt;!&ndash;<span class="badge">14</span>&ndash;&gt;-->
+<!--<button class="btn btn-warning badge">删除粉丝</button>-->
+<!--用户-->
+<!--</li>-->
+
+<!--<li class="list-group-item list-group-item-success">-->
+<!--&lt;!&ndash;<span class="badge">14</span>&ndash;&gt;-->
+<!--<button class="btn btn-warning badge">删除粉丝</button>-->
+<!--用户-->
+<!--</li>-->
+
+
+<!--<li class="list-group-item list-group-item-success">-->
+<!--&lt;!&ndash;<span class="badge">14</span>&ndash;&gt;-->
+<!--<button class="btn btn-warning badge">删除粉丝</button>-->
+<!--用户-->
+<!--</li>-->
+
+
+<!--<li class="list-group-item list-group-item-success">-->
+<!--&lt;!&ndash;<span class="badge">14</span>&ndash;&gt;-->
+<!--<button class="btn btn-warning badge">删除粉丝</button>-->
+<!--用户-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+
+
+<!--收藏-->
+<!--<div class="col-md-10">-->
+
+<!--<div class="col-md-4">-->
+<!--<div class="thumbnail">-->
+<!--<img src="../images/明朝.png" alt="...">-->
+<!--<div class="caption">-->
+<!--<h3>作者</h3>-->
+<!--<p>这是我的收藏</p>-->
+<!--<p>-->
+<!--<a href="#" class="btn btn-primary" role="button">删除</a>-->
+<!--</p>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="col-md-4">-->
+<!--<div class="thumbnail">-->
+<!--<img src="../images/明朝.png" alt="...">-->
+<!--<div class="caption">-->
+<!--<h3>作者</h3>-->
+<!--<p>这是我的收藏</p>-->
+<!--<p>-->
+<!--<a href="#" class="btn btn-primary" role="button">删除</a>-->
+<!--</p>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+
+<!--<div class="col-md-4">-->
+<!--<div class="thumbnail">-->
+<!--<img src="../images/明朝.png" alt="...">-->
+<!--<div class="caption">-->
+<!--<h3>作者</h3>-->
+<!--<p>这是我的收藏</p>-->
+<!--<p>-->
+<!--<a href="#" class="btn btn-primary" role="button">删除</a>-->
+<!--</p>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+
+<!--<div class="col-md-4">-->
+<!--<div class="thumbnail">-->
+<!--<img src="../images/明朝.png" alt="...">-->
+<!--<div class="caption">-->
+<!--<h3>作者</h3>-->
+<!--<p>这是我的收藏</p>-->
+<!--<p>-->
+<!--<a href="#" class="btn btn-primary" role="button">删除</a>-->
+<!--</p>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--</div>-->
+<!--<div class="col-md-10" id="seeuser" style="display: none">-->
+<!--<div class="col-md-12">-->
+
+<!--<div class="panel    col-md-12">-->
+<!--<div class="panel-body col-md-2">-->
+<!--昵称：-->
+<!--</div>-->
+<!--<div class="panel-footer col-md-10">tom</div>-->
+<!--</div>-->
+
+<!--<div class="panel    col-md-12">-->
+<!--<div class="panel-body col-md-2">-->
+<!--性别：-->
+<!--</div>-->
+<!--<div class="panel-footer col-md-10">tom</div>-->
+<!--</div>-->
+
+<!--<div class="panel    col-md-12">-->
+<!--<div class="panel-body col-md-2">-->
+<!--个新签名：-->
+<!--</div>-->
+<!--<div class="panel-footer col-md-10">tom</div>-->
+<!--</div>-->
+
+
+<!--<div class="panel    col-md-12">-->
+<!--<div class="panel-body col-md-2">-->
+<!--邮箱：-->
+<!--</div>-->
+<!--<div class="panel-footer col-md-10">tom</div>-->
+<!--</div>-->
+
+<!--<div class="panel    col-md-12">-->
+<!--<div class="panel-body col-md-2">-->
+<!--生日：-->
+<!--</div>-->
+<!--<div class="panel-footer col-md-10">tom</div>-->
+<!--</div>-->
+<!--<div class="panel    col-md-12">-->
+<!--<div class="panel-body col-md-2">-->
+<!--地址：-->
+<!--</div>-->
+<!--<div class="panel-footer col-md-10">tom</div>-->
+<!--</div>-->
+
+<!--<div class="panel    col-md-12">-->
+<!--<div class="panel-body col-md-2">-->
+<!--金币：-->
+<!--</div>-->
+<!--<div class="panel-footer col-md-10">tom</div>-->
+<!--</div>-->
+
+
+<!--<div class="col-md-8" style="">-->
+<!--<img src="../images/w.jpeg"/>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--</div>-->
+

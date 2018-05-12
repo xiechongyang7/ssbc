@@ -1,0 +1,184 @@
+body,html{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+div,span,ul,li,img,input,table,tr,td{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.user{
+    background: gray;
+    width: 65%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+
+/*头部导航*/
+.user .header{
+    width: 100%;
+    height: 40px;
+
+}
+
+.user .header .banner{
+    position: absolute;
+    width: 65%;
+
+    background: whitesmoke;
+}
+
+.user .header .banner ul{
+    margin-top: 20px;
+    list-style: none;
+}
+
+.user .header .banner ul li{
+    padding-right: 20px;
+    font-family: 华文楷体;
+    float: right;
+}
+
+.user .header .banner ul .explain-head{
+    float: left;
+    margin-left: 20px;
+}
+
+.user .header .banner ul .explain-head input{
+    padding-right: 20px;
+    font-size: 0.9em;
+    font-family: 华文楷体;
+    border: none;
+}
+
+
+.user .header .banner ul li:hover{
+    color: #ff936a;
+}
+
+
+/*logo与搜索*/
+
+.user .neck{
+    height: 110px;
+    background: brown;
+}
+
+.user .neck ul{
+    width: 65%;
+    position: absolute;
+    list-style: none;
+    line-height: 65px;
+}
+
+.user .neck ul .logo-li{
+    margin-top: 30px;
+    float: left;
+    background: white;
+}
+
+/*制作搜索*/
+.user .neck ul .find-li{
+    margin-top: 60px;
+    float: right;
+    /*background: white;*/
+}
+
+.user .neck ul .find-li .find-neck .find-text{
+    line-height: 30px;
+    padding-top: 10px;
+    font-family: 华文楷体;
+    font-size: 1.2em;
+    width: 300px;
+    border: solid 3px #ff936a;
+}
+
+/*制作logo*/
+.user .neck ul .logo-li{
+    background: url("../images/海滩.png");
+    background-repeat: no-repeat;
+    background-size: 60px 60px;
+    background-position: left;
+}
+
+.user .neck ul .logo-li h1{
+    margin-left: 70px;
+    font-family: 隶书;
+}
+
+
+/*制作主体部分的导航栏*/
+
+.user .main .nav-main{
+    background:  #ff936a;
+    width: 65%;
+    height: 45px;
+    position: absolute;
+}
+
+.user .main .nav-main ul{
+    list-style: none;
+    margin-left: 210px;
+
+}
+
+.user .main .nav-main ul li{
+    float: left;
+
+    /*border: solid 1px white;*/
+    line-height: 45px;
+    width: 160px;
+
+    /*设置字体*/
+    text-align: center;
+    font-family: 黑体;
+    color: white;
+    font-size: 1.2em;
+
+}
+
+.user .main .nav-main ul li:hover{
+    background: cadetblue;
+}
+
+/*制作主要部分*/
+/*先导航部分*/
+.user .main .container-main{
+    background: dimgray;
+    /*margin-top: 45px;*/
+    padding-top: 100px;
+}
+
+
+.user .main .container-main .container-nav{
+    background: coral;
+    display: inline-block;
+}
+
+.user .main .container-main .container-nav ul{
+    list-style: none;
+    margin-left: 30px;
+
+}
+
+.user .main .container-main .container-nav ul li{
+
+}
+
+
+.user .main .container-main .container-detail{
+    display: inline-block;
+}
+
+
+
+
+
+
+
+

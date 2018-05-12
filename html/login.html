@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+
+    <title>LOGIN</title>
+
+    <style type="text/css">
+        body,html{
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        div{
+            box-sizing: border-box;
+        }
+        .contain-login{
+            width: 65%;
+            height: 100%;
+            margin: 0px auto;
+            /*background: gray;*/
+            padding-top: 10%;
+        }
+        /*把整个内容放到中间*/
+        .contain-login .form-login{
+            width: 400px;
+            height: 400px;
+            background: white;
+            margin: 0px auto;
+            padding: 10px 20px;
+        }
+
+        /*控制一级标题*/
+        .contain-login .form-login .banner_login{
+            text-align: center;
+            font-size: 2.7em;
+            font-family: 隶书;
+        }
+        /*控制输入用户名和密码*/
+        .contain-login .form-login .action-class,.password-class{
+            width: 100%;
+            height: 55px;
+            background: #FAFFBD;
+            font-size: 1.6em;
+            font-family: 华文楷体;
+            box-sizing: border-box;
+            border: solid 1px gray;
+            margin: 1px;
+        }
+        /*错误提示*/
+        .contain-login .form-login .error-login{
+            font-size: 0.5em;
+            color: red;
+            border: none;
+            visibility:hidden;
+
+        }
+        /*控制登入按钮*/
+        .contain-login .form-login .btn-login{
+            border: 0;
+            width: 100%;
+            height: 50px;
+            background: #ff936a;
+            font-family: 隶书;
+            font-size: 1.5em;
+            color: white;
+            /*设置字间距与居中  其实并没有居中*/
+            letter-spacing:15px;
+            text-align: center;
+
+            /*margin-top: 15px;*/
+
+        }
+        .contain-login .form-login .btn-login:hover{
+
+        }
+
+        /*控制单选框和忘记密码*/
+        .contain-login .form-login .auto-forget{
+            margin-top: 15px;
+            width: 100%;
+        }
+        .contain-login .form-login .auto-forget .auto-login{
+            color: gray;
+        }
+        .contain-login .form-login .auto-forget .auto-login:hover{
+            color: #ff936a;
+        }
+        .contain-login .form-login .auto-forget .forget_password{
+            float:right;
+            text-decoration: none;
+            color: gray;
+        }
+        .contain-login .form-login .auto-forget .forget_password:hover{
+            color: #ff936a;
+        }
+
+        /*控制注册*/
+        .contain-login .form-login .register{
+            width: 100%;
+            text-align: center;
+            border: solid 1px gray;
+            font-size: 2em;
+            margin-top: 15px;
+            font-family: 隶书;
+        }
+        .contain-login .form-login .register .register-a{
+            /*去下划线改变字体的样式*/
+            text-decoration: none;
+            color: gray;
+        }
+        .contain-login .form-login .register:hover{
+            cursor:pointer;
+            border: solid 1px #ff936a;
+        }
+
+        /*设置底部*/
+        .contain-login .end{
+            width: 65%;
+            position: absolute; /*or前面的是absolute就可以用*/
+            bottom: 0px;
+            background: whitesmoke;
+
+        }
+        .contain-login  .end ul{
+            list-style: none;
+        }
+
+        .contain-login  .end ul li{
+            color: black;
+            float: right;
+            padding-left: 50px;
+            font-family: 华文楷体;
+            /*background: blue;*/
+            bottom: 0;
+            padding-right: 10px;
+        }
+    </style>
+
+</head>
+<body>
+
+
+    <div class = "contain-login">
+        <div class="form-login">
+
+            <!--标题-->
+            <div>
+                <h1 class="banner_login">登录</h1>
+            </div>
+            <!--用户名-->
+            <div>
+                <input placeholder="请输入用户名" type="text" id = "user_action" class = "action-class">
+            </div>
+            <!--密码-->
+            <div>
+                <input placeholder="请输入密码" type="password" id = "user_password" class = "password-class">
+            </div>
+            <!--错误提示-->
+            <div >
+                <input class = "error-login" type="text" value="*用户名或密码错误" readonly>
+            </div>
+            <!--登陆按钮-->
+            <div>
+                <button type="button" id = "btn_login" class = "btn-login">登陆</button>
+            </div>
+            <!--自动登陆和忘记密码处理-->
+            <div class = "auto-forget">
+                <span >
+                    <!--在哪个窗口打开新页面-->
+                    <!--<radio id = "auto_login"></radio>-->
+                     <!--<a id = "auto_login" href="#" target="_self">两周内自动登录</a>-->
+                    <label class = "auto-login">
+                        <input type="radio" id = "auto_login"   value="两周内自动登录">两周内自动登录
+                    </label>
+                </span>
+                <span>
+                    <a class = "forget_password" id = "forget_password" href="#" target="_self">忘记密码？</a>
+                </span>
+            </div>
+            <!--注册-->
+            <div class = "register">
+                <a class = "register-a"href="#" target="_self" id = "register">注册账号</a>
+            </div>
+
+        </div>
+        <!--底部-->
+        <div class = "end">
+            <!--<table class="end-table">-->
+            <!--<tb class="end-tb">-->
+            <!--<tr></tr>-->
+            <!--<tr>如果侵权请联系我们</tr>-->
+            <!--<tr>意见反馈</tr>-->
+            <!--</tb>-->
+            <!--</table>-->
+            <ul>
+
+
+                <li><img src="../images/微信.png" height="20" width="20"/></li>
+                <li><img src="../images/email.png" height="20" width="20"/></li>
+                <li><img src="../images/qq.png" height="20" width="20"/></li>
+                <li>意见反馈</li>
+                <li>如果侵权请联系我们</li>
+
+            </ul>
+        </div>
+    </div>
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/login.js"></script>
+
+</body>
+</html>
