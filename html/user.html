@@ -66,7 +66,6 @@
     <link rel="stylesheet" href="../css/ion.calendar.css">
 
 
-
 </head>
 <body>
 <div class="all">
@@ -122,7 +121,7 @@
             <li role="presentation">关注</li>
             <li role="presentation">粉丝</li>
             <li role="presentation">消息</li>
-            <li role="presentation">上传</li>
+            <li role="presentation" onclick="updata()">上传</li>
             <li role="presentation">收藏</li>
             <li role="presentation">修改密码</li>
             <li role="presentation">我的地址</li>
@@ -131,49 +130,9 @@
         </ul>
     </div>
 
-    <!--<div class="col-md-10">-->
-    <!--<ul class="list-group col-md-4">-->
-    <!--<li class="list-group-item">书单名称</li>-->
-    <!--<li class="list-group-item">用户作者</li>-->
-    <!--<li class="list-group-item">书名：</li>-->
-    <!--<li class="list-group-item">书名：</li>-->
-    <!--<li class="list-group-item">书名：</li>-->
-    <!--<li class="list-group-item"><button>查看书单</button></li>-->
-    <!--</ul>-->
+    <p id="all">
 
-    <!--<ul class="list-group col-md-4">-->
-    <!--<li class="list-group-item">书单名称</li>-->
-    <!--<li class="list-group-item">用户作者</li>-->
-    <!--<li class="list-group-item">书名：</li>-->
-    <!--<li class="list-group-item">书名：</li>-->
-    <!--<li class="list-group-item">书名：</li>-->
-    <!--<li class="list-group-item"><button>查看书单</button></li>-->
-    <!--</ul>-->
-
-
-    <!--<ul class="list-group col-md-4">-->
-    <!--<li class="list-group-item">书单名称</li>-->
-    <!--<li class="list-group-item">用户作者</li>-->
-    <!--<li class="list-group-item">书名：</li>-->
-    <!--<li class="list-group-item">书名：</li>-->
-    <!--<li class="list-group-item">书名：</li>-->
-    <!--<li class="list-group-item"><button>查看书单</button></li>-->
-    <!--</ul>-->
-
-
-    <!--<ul class="list-group col-md-4">-->
-    <!--<li class="list-group-item">书单名称</li>-->
-    <!--<li class="list-group-item">用户作者</li>-->
-    <!--<li class="list-group-item">书名：</li>-->
-    <!--<li class="list-group-item">书名：</li>-->
-    <!--<li class="list-group-item">书名：</li>-->
-    <!--<li class="list-group-item"><button>查看书单</button></li>-->
-    <!--</ul>-->
-    <!--</div>-->
-    <!--个人信息-->
-    <p id = "all">
-
-    <!--修改个人信息-->
+        <!--修改个人信息-->
     <div class="col-md-10" id="setUser" style="display: none">
         <div class="col-md-12">
 
@@ -181,18 +140,18 @@
                 <div class="panel-body col-md-2">
                     昵称：
                 </div>
-                <input class="panel-footer col-md-10" id = "userNickname">
+                <input class="panel-footer col-md-10" id="userNickname">
             </div>
 
             <div class="panel    col-md-12">
                 <div class="panel-body col-md-2">
                     性别：
                 </div>
-                <input class="panel-footer col-md-10" id ="userSex">
+                <input class="panel-footer col-md-10" id="userSex">
             </div>
 
             <div class="panel    col-md-12">
-                <div class="panel-body col-md-2" >
+                <div class="panel-body col-md-2">
                     个新签名：
                 </div>
                 <input class="panel-footer col-md-10" id="userSignature">
@@ -211,7 +170,7 @@
                     生日：
                 </div>
 
-                <input id ="userBirthday" type="text" class="panel-footer col-md-10 date" placeholder="请选择日期">
+                <input id="userBirthday" type="text" class="panel-footer col-md-10 date" placeholder="请选择日期">
 
             </div>
 
@@ -237,6 +196,89 @@
         </div>
 
     </div>
+    <div class="col-md-10" id="upBook" style="display: none">
+        <!--action="http://127.0.0.1:8080/book/postbook" method="post" -->
+        <form id = 'from1' enctype='multipart/form-data'>
+        <input id="bookUserId" name="bookUserId" style="display: none">
+
+        <div class="col-md-12">
+
+            <div class="panel    col-md-12">
+                <div class="panel-body col-md-2">
+                    书籍名称：
+                </div>
+                <input class="panel-footer col-md-10" id="bookName" name="bookName">
+            </div>
+
+            <div class="panel    col-md-12">
+                <div class="panel-body col-md-2">
+                    作者：
+                </div>
+                <input class="panel-footer col-md-10" id="bookAuthor" name="bookAuthor">
+            </div>
+
+            <div class="panel    col-md-12">
+
+            </div>
+
+            <div class="panel    col-md-12">
+                <div class="panel-body col-md-2">
+                    书籍类型1：
+                    <select class="panel-footer " id="bookFirstClassify" name="bookFirstClassify">
+
+                    </select>
+                </div>
+
+                <div class="panel-body col-md-2">
+                    书籍类型2：
+                    <select class="panel-footer " id="bookSecondClassify" name="bookSecondClassify">
+
+                    </select>
+                </div>
+                <!--<div class="panel-body col-md-2">-->
+                    <!--书籍类型3：-->
+                    <!--<select class="panel-footer " id="classifythird">-->
+
+                    <!--</select>-->
+                <!--</div>-->
+                <div class="panel-body col-md-2">
+                    书籍标签：<input class="panel-footer " id="bookTag" name="bookTag">
+                </div>
+                <div class="panel-body col-md-2">
+                    书籍价格（书币）： <input type="number" class="panel-footer" id="bookValue" name="bookValue">
+                </div>
+
+            </div>
+            <div class="panel    col-md-12">
+                <div class="panel-body col-md-2">
+                    书籍封面：
+                </div>
+                <input name="files" type="file" class="panel-footer ">
+            </div>
+            <!-- id="bookCove" name="bookCove"  id="book" name="book"-->
+            <div class="panel    col-md-12">
+                <div class="panel-body col-md-2">
+                    书籍：
+                </div>
+                <input name="files" type="file" class="panel-footer ">
+            </div>
+
+            <div class="panel    col-md-12">
+                <div class="panel-body col-md-2">
+                    书籍简介：
+                </div>
+                <textarea id="bookIntroduce" name="bookIntroduce" class="col-md-8" style="height: 220px;">
+                    哈哈哈哈哈哈
+                </textarea>
+            </div>
+
+
+        </div>
+        <div class="panel    col-md-12">
+            <button type="button" class="btn btn-success col-md-5" onclick="upbook()">上传书籍</button>
+        </div>
+        </form>
+    </div>
     </p>
 
 </div>
@@ -248,9 +290,13 @@
 <script src="../js/moment.min.js"></script>
 <script src="../js/moment.zh-cn.js"></script>
 <script src="../js/ion.calendar.js"></script>
-<script src="../js/user.js"></script>
 <script src="../js/timeUtil.js"></script>
+<script src="../js/classifydata.js"></script>
+
+
+<script src="../js/user.js"></script>
 <script src="../js/setUser.js"></script>
+<script src="../js/upBook.js"></script>
 
 </body>
 </html>
@@ -318,7 +364,7 @@
 <!--</div>-->
 
 <!--<div class="col-md-8" style="">-->
-<!--<img src="../images/w.jpeg"/>-->
+<!--<img src="../images/ .jpeg"/>-->
 <!--<button>修改头像</button>-->
 <!--</div>-->
 <!--</div>-->
@@ -483,9 +529,50 @@
 
 
 <!--<div class="col-md-8" style="">-->
-<!--<img src="../images/w.jpeg"/>-->
+<!--<img src="../images/ .jpeg"/>-->
 <!--</div>-->
 <!--</div>-->
 
 <!--</div>-->
 
+
+<!--<div class="col-md-10">-->
+<!--<ul class="list-group col-md-4">-->
+<!--<li class="list-group-item">书单名称</li>-->
+<!--<li class="list-group-item">用户作者</li>-->
+<!--<li class="list-group-item">书名：</li>-->
+<!--<li class="list-group-item">书名：</li>-->
+<!--<li class="list-group-item">书名：</li>-->
+<!--<li class="list-group-item"><button>查看书单</button></li>-->
+<!--</ul>-->
+
+<!--<ul class="list-group col-md-4">-->
+<!--<li class="list-group-item">书单名称</li>-->
+<!--<li class="list-group-item">用户作者</li>-->
+<!--<li class="list-group-item">书名：</li>-->
+<!--<li class="list-group-item">书名：</li>-->
+<!--<li class="list-group-item">书名：</li>-->
+<!--<li class="list-group-item"><button>查看书单</button></li>-->
+<!--</ul>-->
+
+
+<!--<ul class="list-group col-md-4">-->
+<!--<li class="list-group-item">书单名称</li>-->
+<!--<li class="list-group-item">用户作者</li>-->
+<!--<li class="list-group-item">书名：</li>-->
+<!--<li class="list-group-item">书名：</li>-->
+<!--<li class="list-group-item">书名：</li>-->
+<!--<li class="list-group-item"><button>查看书单</button></li>-->
+<!--</ul>-->
+
+
+<!--<ul class="list-group col-md-4">-->
+<!--<li class="list-group-item">书单名称</li>-->
+<!--<li class="list-group-item">用户作者</li>-->
+<!--<li class="list-group-item">书名：</li>-->
+<!--<li class="list-group-item">书名：</li>-->
+<!--<li class="list-group-item">书名：</li>-->
+<!--<li class="list-group-item"><button>查看书单</button></li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--个人信息-->

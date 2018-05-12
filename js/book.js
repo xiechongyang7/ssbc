@@ -3,7 +3,7 @@ var Replyname = null;
 var userName = localStorage.getItem("userName");
 var userId = localStorage.getItem("userId");
 $(function () {
-    console.log(localStorage.getItem("userId") + "  anme")
+    // console.log(localStorage.getItem("userId") + "  anme")
     $("#userTag").text(localStorage.getItem("userName"));
     $.ajax({
         url: 'http://127.0.0.1:8080/book/getbookbyid',
