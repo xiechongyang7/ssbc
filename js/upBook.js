@@ -1,6 +1,10 @@
 var data = classify;
 function updata() {
 
+    $("#all").empty();
+    $("#setUser").hide();
+    $("#upBook").show();
+
     console.log("csacdacsda")
     $("#all").empty();
 

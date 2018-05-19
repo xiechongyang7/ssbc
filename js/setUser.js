@@ -2,7 +2,11 @@ var userId = localStorage.getItem("userId");
 function setUser() {
     console.log("setUser");
     $("#all").empty();
+    $("#upBook").hide();
     $("#setUser").show();
+
+
+
 
     $("#userNickname").val(userData.userNickname);
     $("#userSex").val(userData.userSex);

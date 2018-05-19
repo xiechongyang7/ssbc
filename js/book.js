@@ -55,6 +55,10 @@ $(function () {
 
     })
 
+
+//   设置下载按钮
+    $('#downbtn').attr('href','http://127.0.0.1:8080/download/getBook?bookid='+bookid);
+
 })
 
 //主要评论
@@ -159,7 +163,16 @@ console.log(window.location.href.split('=')[1])
 }
 
 
-
+// function down() {
+//     $.ajax({
+//         url:'http://127.0.0.1:8080/download/getBook?bookid=1',
+//         // type:'get',
+//         // dataType:'json',
+//         // data:{
+//         //     bookid:1
+//         // }
+//     })
+// }
 
 
 
