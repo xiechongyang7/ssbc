@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f80c08e-8df4-4d22-a016-050dd071bd0b" name="Default" comment="增加下载书籍功能">
+    <list default="true" id="2f80c08e-8df4-4d22-a016-050dd071bd0b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -309,7 +309,7 @@
       <workItem from="1526307438068" duration="3225000" />
       <workItem from="1526314860096" duration="471000" />
       <workItem from="1526714654897" duration="597000" />
-      <workItem from="1526718415468" duration="3158000" />
+      <workItem from="1526718415468" duration="3227000" />
     </task>
     <task id="LOCAL-00001" summary="增加下载书籍功能">
       <created>1526724673663</created>
@@ -325,11 +325,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526724894797</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="增加下载书籍功能">
+      <created>1526725309037</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1526725309037</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163549000" />
+    <option name="totallyTimeSpent" value="163618000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
