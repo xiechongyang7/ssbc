@@ -16,7 +16,7 @@ log_btn.onclick = function () {
 
             setIt();
 
-            if(data.resultCode == 300) {
+            if(data.resultCode == 300) {2
                 window.location.href = 'http://localhost:63342/ssbc/html/home.html'
             }
         }

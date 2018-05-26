@@ -1,50 +1,53 @@
-var bookid = window.location.href.split('=')[1];
-var Replyname = null;
+var url = window.location.href.split('&');
+var rewiewBookId = url[0].split("=")[1];
+var reviewId = url[1].split("=")[1];
 var userName = localStorage.getItem("userName");
 var userId = localStorage.getItem("userId");
+// http://localhost:63342/ssbc/html/reviewdetails.html?rewiewBookId=12&reviewId=4
 $(function () {
-    // console.log(localStorage.getItem("userId") + "  anme")
-    $("#userTag").text(localStorage.getItem("userName"));
+    console.log(":::::"+rewiewBookId+"::::"+reviewId);
+    //书籍信息
     $.ajax({
         url: 'http://127.0.0.1:8080/book/getbookbyid',
         type: 'get',
         dataType: 'json',
         data: {
-            bookid: bookid
+            bookid:rewiewBookId
         },
-
-        success: function (data) {
-            $('#bName').append(data.book.bookName);
-            $('#bName').val(data.book.bookId);
-            $('#bAuthor').append(data.book.bookAuthor);
-            $('#bookIn').append(data.book.bookIntroduce);
-            //更新时间
-            $('#replace').append(getMyDate(data.book.bookReplace));
-            //书籍价值
-            $('#bValue').append(data.book.bookValue)
-            //书籍标签
-            $('#bookTag').append(data.book.bookTag)
-            //书籍分一类级
-            $('#bookFirstClassify').append(classify.bookFirstClassify[data.book.bookFirstClassify].content)
-            //二级
-            $('#bookSecondClassify').append(classify.bookSecondClassify[data.book.bookSecondClassify].content)
-            //三级
-            $('#bookThirdClassify').append(classify.bookThirdClassify[data.book.bookThirdClassify == null ? 0 : data.book.bookThirdClassify].content)
-            //    封面
-            $('#img1').attr('src', "../images/明朝.png");
-            // $('#img1').attr('src',"../images/"+data.book.bookCover);
+        success:function (data) {
+            console.log(data);
+            $("#bookname").text(data.book.bookName);
+            $("#bookcover").attr("src","../images/"+data.book.bookCover);
+            $("#bookAuthor").text("作者:"+data.book.bookAuthor);
         }
-
     })
 
-//    评论功能
-
+    //书评信息
     $.ajax({
-        url: 'http://127.0.0.1:8080/comment/getcmtbook',
+        url: 'http://127.0.0.1:8080/review/getReviewByReviewid',
         type: 'get',
         dataType: 'json',
         data: {
-            bookId: bookid
+            reviewId:reviewId
+        },
+        success:function (data) {
+            console.log(data)
+            var review = data.review;
+            $("#reviewName").val("名称:"+review.reviewName);
+            $("#reviewAuthor").val("作者:"+review.reviewAuthor);
+            $("#reviewContent").text(review.reviewContent);
+        }
+    })
+
+    //评论
+    //    评论功能
+
+    $.ajax({
+        url: 'http://127.0.0.1:8080/comment/getCommentByReviewId',
+        type: 'get',
+        dataType: 'json',
+        data: {
+            reviewId: reviewId
         },
         success: function (data) {
             comment(data.commentList, data.commentList.length - 1);
@@ -55,11 +58,9 @@ $(function () {
 
     })
 
-
-//   设置下载按钮
-    $('#downbtn').attr('href','http://127.0.0.1:8080/download/getBook?bookid='+bookid);
-
 })
+
+
 
 //主要评论
 function comment(data, length) {
@@ -113,14 +114,14 @@ function sendComment() {
 //    被回复人id
     var commentId = $("#send").val();
     //    书籍id
-    var bookid = commentId != ""?null:window.location.href.split('=')[1];
+    var reviewId = reviewId = url[1].split("=")[1];;
 //    回复内容
     var commentContent = $("#contentComment").val();
 //    回复时间
     var commentTime = null;
 //    评分
 //    是否已读
-console.log(window.location.href.split('=')[1])
+    console.log(window.location.href.split('=')[1])
     $.ajax({
         url:'http://127.0.0.1:8080/comment/postComment',
         type:'post',
@@ -128,7 +129,7 @@ console.log(window.location.href.split('=')[1])
         data:{
             commentUserId:commentUserId,
             commentReply:commentId,
-            commentBookId:bookid,
+            commentReviewId:reviewId,
             commentContent:commentContent,
             commentScore:90,
             commentRead:0,
@@ -162,36 +163,21 @@ console.log(window.location.href.split('=')[1])
     })
 }
 
-//发送书评
-function sendputreview() {
-    var userid = userId;
-    var bookid= window.location.href.split('=')[1];;
-    var reviewname = $('#reviewName').val();
-    var content = $('#bookreview').val();
-
-    $.ajax({
-            url: 'http://127.0.0.1:8080/review/putReview',
-            type: 'post',
-            dataType: 'json',
-            data: {
-                reviewUserId: userid,
-                reviewBookId: bookid,
-                reviewName: reviewname,
-                reviewContent: content,
-
-            },
-            success:function (data) {
-                // for(var i = 0;i < data.length;i++){
-                //
-                //
-                // }
-                alert(data.resultMsg);
-            }
-        }
-    )
 
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
