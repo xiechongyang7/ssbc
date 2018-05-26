@@ -1,5 +1,5 @@
 $(function () {
-    console.log(localStorage.getItem("userName") + "  anme")
+    console.log(localStorage.getItem("userName") + "  name")
     $("#userTag").text(localStorage.getItem("userName"));
     userId = localStorage.getItem("userId");
 
