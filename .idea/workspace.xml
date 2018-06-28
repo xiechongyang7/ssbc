@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f80c08e-8df4-4d22-a016-050dd071bd0b" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/js/classify.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/js/collectionBook.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/js/rank.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/js/register.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/html/activity.html" afterPath="$PROJECT_DIR$/html/activity.html" />
-      <change beforePath="$PROJECT_DIR$/html/book.html" afterPath="$PROJECT_DIR$/html/book.html" />
-      <change beforePath="$PROJECT_DIR$/html/booklist.html" afterPath="$PROJECT_DIR$/html/booklist.html" />
-      <change beforePath="$PROJECT_DIR$/html/bookpraise.html" afterPath="$PROJECT_DIR$/html/bookpraise.html" />
-      <change beforePath="$PROJECT_DIR$/html/classify.html" afterPath="$PROJECT_DIR$/html/classify.html" />
-      <change beforePath="$PROJECT_DIR$/html/home.html" afterPath="$PROJECT_DIR$/html/home.html" />
-      <change beforePath="$PROJECT_DIR$/html/login.html" afterPath="$PROJECT_DIR$/html/login.html" />
-      <change beforePath="$PROJECT_DIR$/html/rank.html" afterPath="$PROJECT_DIR$/html/rank.html" />
-      <change beforePath="$PROJECT_DIR$/html/register.html" afterPath="$PROJECT_DIR$/html/register.html" />
-      <change beforePath="$PROJECT_DIR$/html/review.html" afterPath="$PROJECT_DIR$/html/review.html" />
-      <change beforePath="$PROJECT_DIR$/html/reviewdetails.html" afterPath="$PROJECT_DIR$/html/reviewdetails.html" />
-      <change beforePath="$PROJECT_DIR$/html/user.html" afterPath="$PROJECT_DIR$/html/user.html" />
-      <change beforePath="$PROJECT_DIR$/js/home.js" afterPath="$PROJECT_DIR$/js/home.js" />
-      <change beforePath="$PROJECT_DIR$/js/login.js" afterPath="$PROJECT_DIR$/js/login.js" />
-      <change beforePath="$PROJECT_DIR$/js/review.js" afterPath="$PROJECT_DIR$/js/review.js" />
-      <change beforePath="$PROJECT_DIR$/js/user.js" afterPath="$PROJECT_DIR$/js/user.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -379,7 +359,7 @@
       <workItem from="1528728676074" duration="660000" />
       <workItem from="1528759955927" duration="29000" />
       <workItem from="1528760035878" duration="1338000" />
-      <workItem from="1530197869694" duration="22000" />
+      <workItem from="1530197869694" duration="137000" />
     </task>
     <task id="LOCAL-00001" summary="增加下载书籍功能">
       <created>1526724673663</created>
@@ -402,11 +382,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526725309037</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="排行榜功能">
+      <created>1530197929060</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1530197929060</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205237000" />
+    <option name="totallyTimeSpent" value="205352000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -420,7 +407,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2581665" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2581665" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -493,7 +480,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="增加下载书籍功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加下载书籍功能" />
+    <MESSAGE value="排行榜功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="排行榜功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
