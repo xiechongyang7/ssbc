@@ -2,7 +2,14 @@ $(function () {
     console.log(localStorage.getItem("userName") + "  name")
     $("#userTag").text(localStorage.getItem("userName"));
     userId = localStorage.getItem("userId");
+    var data = classify;
 
+    for(var i=0;i<data.bookFirstClassify.length/2;i++){
+        $("#classify1").append(` <li class="list-group-item" id="${data.bookFirstClassify[i].num}" onclick="getBook(this.id)">${data.bookFirstClassify[i].content}</li>`);
+    }
+    for(var i=data.bookFirstClassify.length/2;i<data.bookFirstClassify.length;i++){
+        $("#classify2").append(` <li class="list-group-item" id="${data.bookFirstClassify[i].num}" onclick="getBook(this.id)">${data.bookFirstClassify[i].content}</li>`);
+    }
     //请求书籍列表
     $.ajax({
         url: 'http://127.0.0.1:8080/book/getnumbook?num=18',
@@ -65,21 +72,32 @@ function seeBook(id) {
     window.location.href='http://localhost:63342/ssbc/html/book.html?&bookid='+id;
 }
 
-function shoucang(id) {
-    console.log(id);
-    $.ajax({
-        url: 'http://127.0.0.1:8080/collection/postCollection',
-        type: 'post',
-        dataType: 'json',
-        data:{
-            collectionUserId:userId,
-            collectionBookId:id
-        },
-        success:function(data){
-            if(data.resultCode==100){
-                alert("收藏成功")
-            }
-        }
-    })
+// function shoucang(id) {
+//     console.log(id);
+//     $.ajax({
+//         url: 'http://127.0.0.1:8080/collection/postCollection',
+//         type: 'post',
+//         dataType: 'json',
+//         data:{
+//             collectionUserId:userId,
+//             collectionBookId:id
+//         },
+//         success:function(data){
+//             if(data.resultCode==100){
+//                 alert("收藏成功")
+//             }
+//         }
+//     })
+//
+// }
+
+function getBook(id) {
+    window.location.href='http://localhost:63342/ssbc/html/classify.html?&classify='+id;
+
+}
+
+function goActivity() {
+    href=
+    window.location.href='http://localhost:63342/ssbc/html/activity.html';
 
 }

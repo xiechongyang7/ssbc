@@ -71,6 +71,7 @@
     <script src="../js/jquery-1.10.2.min.js"></script>
 
     <script src="../js/bootstrap.js"></script>
+    <script src="../js/classifydata.js"></script>
 
 </head>
 <body>
@@ -99,7 +100,7 @@
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search">
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <a type="submit" class="btn btn-default" href="http://localhost:63342/ssbc/html/login.html">登录</a>
                 </form>
 
             </div>
@@ -124,31 +125,31 @@
 
 
     <div class="row col-md-3">
-        <ul class="list-group col-md-6">
-            <li class="list-group-item">小说</li>
-            <li class="list-group-item">成功励志</li>
-            <li class="list-group-item">文学</li>
-            <li class="list-group-item">历史</li>
-            <li class="list-group-item">动漫绘本</li>
-            <li class="list-group-item">杂志</li>
-            <li class="list-group-item">两性情感</li>
-            <li class="list-group-item">少儿</li>
-            <li class="list-group-item">政治军事</li>
-            <li class="list-group-item">法律</li>
-            <li class="list-group-item">外语</li>
+        <ul class="list-group col-md-6" id="classify1">
+            <!--<li class="list-group-item">小说</li>-->
+            <!--<li class="list-group-item">成功励志</li>-->
+            <!--<li class="list-group-item">文学</li>-->
+            <!--<li class="list-group-item">历史</li>-->
+            <!--<li class="list-group-item">动漫绘本</li>-->
+            <!--<li class="list-group-item">杂志</li>-->
+            <!--<li class="list-group-item">两性情感</li>-->
+            <!--<li class="list-group-item">少儿</li>-->
+            <!--<li class="list-group-item">政治军事</li>-->
+            <!--<li class="list-group-item">法律</li>-->
+            <!--<li class="list-group-item">外语</li>-->
         </ul>
-        <ul class="list-group col-md-6">
-            <li class="list-group-item">经管</li>
-            <li class="list-group-item">人文社科</li>
-            <li class="list-group-item">计算机</li>
-            <li class="list-group-item">生活</li>
-            <li class="list-group-item">传记</li>
-            <li class="list-group-item">原创文学</li>
-            <li class="list-group-item">自然科学</li>
-            <li class="list-group-item">旅游</li>
-            <li class="list-group-item">艺术</li>
-            <li class="list-group-item">教育</li>
-            <li class="list-group-item">进口原版</li>
+        <ul class="list-group col-md-6" id="classify2">
+            <!--<li class="list-group-item">经管</li>-->
+            <!--<li class="list-group-item">人文社科</li>-->
+            <!--<li class="list-group-item">计算机</li>-->
+            <!--<li class="list-group-item">生活</li>-->
+            <!--<li class="list-group-item">传记</li>-->
+            <!--<li class="list-group-item">原创文学</li>-->
+            <!--<li class="list-group-item">自然科学</li>-->
+            <!--<li class="list-group-item">旅游</li>-->
+            <!--<li class="list-group-item">艺术</li>-->
+            <!--<li class="list-group-item">教育</li>-->
+            <!--<li class="list-group-item">进口原版</li>-->
         </ul>
     </div>
 
@@ -164,19 +165,19 @@
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-            <div class="item active">
+            <div class="item active" onclick="goActivity()">
                 <img src="../images/1.png" style="width:100%;height: 300px" alt="...">
                 <div class="carousel-caption">
                     介绍
                 </div>
             </div>
-            <div class="item">
+            <div class="item" onclick="goActivity()">
                 <img src="../images/2.png" style="width:100%;height: 300px" alt="...">
                 <div class="carousel-caption">
                     介绍2
                 </div>
             </div>
-            <div class="item">
+            <div class="item" onclick="goActivity()">
                 <img src="../images/3.png" style="width:100%;height: 300px" alt="...">
                 <div class="carousel-caption">
                     介绍3
@@ -201,7 +202,7 @@
     </div>
     <div class="col-md-3 geyan" >
         读书格言<br>
-        啦啦啦
+       书籍是人类进步的阶梯
     </div>
 
     <span class="label label-default col-md-12">新书上线</span>
@@ -440,5 +441,6 @@
 </div>
 <script src="../js/jquery-3.2.1.min.js"></script>
 <script src="../js/home.js"></script>
+<script src="../js/collectionBook.js"></script>
 </body>
 </html>

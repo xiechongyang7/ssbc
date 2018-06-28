@@ -9,15 +9,17 @@ log_btn.onclick = function () {
         dataType:'json',
 
         data:{
-            userId:$("#user_action").val(),
+            userPhone:$("#user_action").val(),
             pwd:$("#user_password").val()
         },
         success:function (data){
 
             setIt();
 
-            if(data.resultCode == 300) {2
+            if(data.resultCode == 300) {
                 window.location.href = 'http://localhost:63342/ssbc/html/home.html'
+            }else {
+                alert("密码错误")
             }
         }
 
