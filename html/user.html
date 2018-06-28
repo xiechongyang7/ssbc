@@ -59,7 +59,13 @@
             /*圆形头像*/
             border-radius: 100px;
         }
+        h3,p{
+            overflow: hidden;
 
+            text-overflow: ellipsis;
+
+            white-space: nowrap;
+        }
     </style>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/city-css.css">
@@ -74,7 +80,7 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
 
-                <a class="navbar-brand" href="#">Brand</a>
+                <a class="navbar-brand" href="#">见海书屋</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -118,13 +124,14 @@
         <ul class="nav-stacked s">
             <li role="presentation" onclick="seeUser()">查看个人信息</li>
             <li role="presentation" onclick="setUser()">设置个人信息</li>
+
+            <li role="presentation" onclick="updata()">上传</li>
+            <li role="presentation" onclick="getCollection()">收藏</li>
             <li role="presentation">关注</li>
             <li role="presentation">粉丝</li>
             <li role="presentation">消息</li>
-            <li role="presentation" onclick="updata()">上传</li>
-            <li role="presentation">收藏</li>
-            <li role="presentation">修改密码</li>
-            <li role="presentation">我的地址</li>
+            <!--<li role="presentation">修改密码</li>-->
+            <!--<li role="presentation">我的地址</li>-->
             <!--<li role="presentation">下载记录</li>-->
             <!--<li role="presentation">我的书单</li>-->
         </ul>
@@ -268,7 +275,6 @@
                     书籍简介：
                 </div>
                 <textarea id="bookIntroduce" name="bookIntroduce" class="col-md-8" style="height: 220px;">
-                    哈哈哈哈哈哈
                 </textarea>
             </div>
 

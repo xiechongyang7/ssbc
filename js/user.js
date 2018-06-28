@@ -30,10 +30,13 @@ function seeUser() {
         },
         success: function (data) {
             userData = data.user;
-            userData.address = data.user.address.addressProvince +
-                "-" + data.user.address.addressCity +
-                "-" + data.user.address.addressArea +
-                "-" + data.user.address.addressRemark;
+            if(data.user.address!=null){
+                userData.address = data.user.address.addressProvince +
+                    "-" + data.user.address.addressCity +
+                    "-" + data.user.address.addressArea
+                    // "-" + data.user.address.addressRemark;
+            }
+
 
             $("#all").append(`
     
@@ -80,7 +83,7 @@ function seeUser() {
                     地址：
                 </div>
                 <div class="panel-footer col-md-10">
-                ${userData.address}
+                ${userData.address==null?"":userData.address}
 </div>
             </div>
 
@@ -106,5 +109,49 @@ function seeUser() {
 
 }
 
+function getCollection() {
+
+    $("#all").html("");
+    $("#setUser").hide();
+    $("#upBook").hide();
+    $.ajax({
+        url:'http://127.0.0.1:8080/collection/getCollection',
+        type:'get',
+        dataType:'json',
+
+        data:{
+            userId:userId
+        },
+        success:function (data){
+
+            console.log(data)
+            $("#all").append(`<div class="col-md-10">`);
+            for(var i = 0; i < data.bookList.length;i++){
+                $("#all").append(`
+
+                    <div class="col-md-4">
+                    <div class="thumbnail">
+                    <img id = "${data.bookList[i].bookId}" onclick="seeBook(this.id)" src="../images/明朝2.png" alt="...">
+                    <div class="caption">
+                    <h3>${data.bookList[i].book.bookName}</h3>
+                    <p>${data.bookList[i].book.bookAuthor}</p>
+                    <p>
+                    <a href="#" class="btn btn-primary" role="button">删除</a>
+                    </p>
+                    </div>
+                    </div>
+                    </div>
+`);
+
+            }
+        }
+    })
+}
+function seeBook(id) {
+
+
+    console.log(id);
+    window.location.href='http://localhost:63342/ssbc/html/book.html?&bookid='+id;
+}
 
 

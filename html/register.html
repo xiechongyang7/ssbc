@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/register.js"></script>
 </head>
 
 <style type="text/css">
@@ -105,7 +107,7 @@
 
             <!--邮箱-->
             <div>
-                <input placeholder="请输入常用邮箱" type="email" id="user_email" class="email-class">
+                <input placeholder="请输入手机号作为登录账号" type="phone" id="user_phone" class="email-class">
             </div>
 
             <!--密码-->
@@ -117,7 +119,7 @@
             <input class="error-register" type="text" value="*输入信息有误" readonly>
             <!--注册按钮-->
             <div>
-                <button type="button" id = "btn_register" class="btn-register">注册</button>
+                <button type="button" id = "btn_register" class="btn-register" onclick="register()">注册</button>
             </div>
         </form>
     </div>
